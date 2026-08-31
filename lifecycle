@@ -1,0 +1,65 @@
+package com.example.lifecycle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button btnExit;
+
+    private void msg(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+        Log.d("LIFECYCLE", text);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        msg("onCreate");
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        msg("onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        msg("onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        msg("onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        msg("onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        msg("onRestart");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        msg("onDestroy");
+    }
+}
